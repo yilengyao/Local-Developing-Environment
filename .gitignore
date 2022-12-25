@@ -3,3 +3,4 @@ __pycache__
 /Local-MusicStore-Environment/local/root/.artifactory_credentials
 /Local-MusicStore-Environment/local/root/.ash_history
 /Local-MusicStore-Environment/local/root/.gradle/*
+/Local-MusicStore-Environment/local/root/.m2/*
