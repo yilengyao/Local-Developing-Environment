@@ -3,7 +3,7 @@ version: "3.4"
 
 services:
 
-  ################## Live Events Application ###################
+  ################## Music Store Application ###################
   music_store_application:
     build:
       context: .
@@ -26,6 +26,14 @@ services:
     # depends_on:
     #   - awssetup
     tty: true
+
+  # database:
+  #   image: mysql:8.0
+  #   environment:
+  #     - MYSQL_DATABASE=quotes
+  #     - MYSQL_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
+  #   ports:
+  #     - '3306:3306'
 
 networks:
   default:

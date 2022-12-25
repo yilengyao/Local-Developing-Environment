@@ -10,7 +10,3 @@ docker swarm init
 ```
 docker-compose build && docker-compose up
 ```
-
-```
-mkdir local/root
-```
