@@ -23,11 +23,11 @@ services:
       - ${MUSIC_STORE_APPLICATION_PATH}:/app
       - /var/run/docker.sock:/var/run/docker.sock
       - ./local/root:/root
-    # depends_on:
-    #   - awssetup
+    depends_on:
+      - music_store_database
     tty: true
 
-  database:
+  music_store_database:
     image: mysql:5.7
     container_name: music-store-database
     environment:
