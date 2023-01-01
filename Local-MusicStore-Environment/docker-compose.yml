@@ -3,7 +3,7 @@ version: "3.4"
 
 services:
 
-  ################## Live Events Application ###################
+  ################## Music Store Application ###################
   music_store_application:
     build:
       context: .
@@ -23,9 +23,20 @@ services:
       - ${MUSIC_STORE_APPLICATION_PATH}:/app
       - /var/run/docker.sock:/var/run/docker.sock
       - ./local/root:/root
-    # depends_on:
-    #   - awssetup
+    depends_on:
+      - music_store_database
     tty: true
+
+  music_store_database:
+    image: mysql:8.0.31
+    container_name: music-store-database
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=music_store
+    ports:
+      - '3306:3306'
 
 networks:
   default:
