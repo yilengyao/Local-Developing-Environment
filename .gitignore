@@ -5,4 +5,4 @@ __pycache__
 /Local-MusicStore-Environment/local/root/.gradle/*
 /Local-MusicStore-Environment/local/root/.m2/*
 /Local-MusicStore-Environment/local/root/*.mv.db
-.DS_Store 
+**/.DS_Store
