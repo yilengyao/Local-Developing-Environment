@@ -1,0 +1,46 @@
+---
+version: "3.4"
+
+services:
+
+  ################## Car Application ###################
+  car_application:
+    build:
+      context: .
+      dockerfile: Car-Application/Dockerfile
+    image: car-application
+    container_name: car-application
+    extra_hosts:
+      - "localhost:192.168.65.2"
+    ports:
+      - 8085:8080
+      - 6569:6565
+    environment:
+      - AWS_ACCESS_KEY_ID=anykey
+      - AWS_SECRET_ACCESS_KEY=anysecret
+      - AWS_REGION=us-east-1
+    volumes:
+      - ${CAR_APPLICATION_PATH}:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./local/root:/root
+    depends_on:
+      - car_database
+    tty: true
+
+  ################## Car Database ###################
+  car_database:
+    image: mysql:8.0.31
+    container_name: car-database
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=car
+    ports:
+      - '3306:3306'
+
+networks:
+  default:
+    driver: overlay
+    name: local-car
+    attachable: true
