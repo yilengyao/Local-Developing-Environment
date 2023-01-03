@@ -5,4 +5,12 @@ __pycache__
 /Local-MusicStore-Environment/local/root/.gradle/*
 /Local-MusicStore-Environment/local/root/.m2/*
 /Local-MusicStore-Environment/local/root/*.mv.db
+
+/Local-Car-Environment/.env
+/Local-Car-Environment/local/root/.artifactory_credentials
+/Local-Car-Environment/local/root/.ash_history
+/Local-Car-Environment/local/root/.gradle/*
+/Local-Car-Environment/local/root/.m2/*
+/Local-Car-Environment/local/root/*.mv.db
+
 **/.DS_Store
