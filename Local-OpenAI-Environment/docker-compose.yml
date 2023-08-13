@@ -1,0 +1,32 @@
+---
+version: "3.4"
+
+services:
+
+  ################## OpenAI Application ###################
+  openai_application:
+    build:
+      context: .
+      dockerfile: OpenAI-Application/Dockerfile
+    image: openai-application
+    container_name: openai-application
+    extra_hosts:
+      - "localhost:192.168.65.2"
+    ports:
+      - 8084:8080
+      - 6569:6565
+    environment:
+      - AWS_ACCESS_KEY_ID=anykey
+      - AWS_SECRET_ACCESS_KEY=anysecret
+      - AWS_REGION=us-east-1
+    volumes:
+      - ${OPENAI_APPLICATION_PATH}:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./local/root:/root
+    tty: true
+
+networks:
+  default:
+    driver: overlay
+    name: local-openai
+    attachable: true
