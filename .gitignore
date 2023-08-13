@@ -13,4 +13,11 @@ __pycache__
 /Local-Car-Environment/local/root/.m2/*
 /Local-Car-Environment/local/root/*.mv.db
 
+/Local-OpenAI-Environment/.env
+/Local-OpenAI-Environment/local/root/.artifactory_credentials
+/Local-OpenAI-Environment/local/root/.ash_history
+/Local-OpenAI-Environment/local/root/.gradle/*
+/Local-OpenAI-Environment/local/root/.m2/*
+/Local-OpenAI-Environment/local/root/*.mv.db
+
 **/.DS_Store
