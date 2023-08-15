@@ -1,6 +1,6 @@
 # Local-Developing-Environment
 
-to not cache a file
+Stop Tracking the File in Git
 ```
 git rm --cached <file path + name>
 ```
